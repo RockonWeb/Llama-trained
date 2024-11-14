@@ -1,0 +1,9 @@
+datasets==3.1.0
+nlpaug==1.1.11
+nltk==3.9.1
+pdfminer.six==20240706
+peft==0.13.2
+scikit_learn==1.5.2
+streamlit==1.40.1
+torch==2.5.1+cu118
+transformers==4.46.2
