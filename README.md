@@ -1,3 +1,8 @@
+## **Requirements:**
+- Python v3.10+ 
+
+- Nvidia GPU
+    
 ## Описание(u can see eng version further)
 Обучение и использование языковой модели на основе PDF-файлов лекций.
 
@@ -7,51 +12,58 @@
 - `models/` - сохранённые модели и результаты обучения
 
 ## Установка
-1. CUDA и cuDNN (для пользователей с NVIDIA GPU)
-    Примечание: Если у вас нет NVIDIA GPU или вы планируете использовать CPU, этот шаг можно пропустить, но обучение будет значительно медленнее.
+1. **CUDA и cuDNN (для пользователей с NVIDIA GPU)**
+    *Примечание:* Если у вас нет NVIDIA GPU или вы планируете использовать CPU, этот шаг можно пропустить, но обучение будет значительно медленнее.
 
     Установите CUDA: https://developer.nvidia.com/cuda-downloads
 
     Установите cuDNN: https://developer.nvidia.com/cudnn
-2. Установите PyTorch с поддержкой CUDA:
-    Замените cu113 на вашу версию CUDA (например, cu116 для CUDA 11.6).
-        ```bash
-        Копировать код
-        pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+2. **Установите PyTorch с поддержкой CUDA:**
+   Замените cu113 на вашу версию CUDA (например, cu116 для CUDA 11.6).
+   ```
+    pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+   ```
 
     Если вы используете CPU:
-        ```bash
-        Копировать код
-        pip install torch torchvision torchaudio
-3. Установите необходимые библиотеки:
-        ```bash
-        pip install transformers datasets PyPDF2 langchain faiss-cpu
-
-    Примечание: Если планируете использовать GPU для FAISS, установите faiss-gpu вместо faiss-cpu:
-        ```bash
-        pip install faiss-gpu
-4. Установите Miniconda(или Anaconda)
-5. Создайте и активируйте виртуальное окружение:
-   ```bash
+    
+    ```
+    pip install torch torchvision torchaudio
+    ```
+3. **Установите необходимые библиотеки:**
+    ```
+    pip install transformers datasets PyPDF2 langchain faiss-cpu
+    ```
+    *Примечание:* Если планируете использовать GPU для FAISS, установите faiss-gpu вместо faiss-cpu:
+    ```
+    pip install faiss-gpu
+    ```
+5. **Установите Miniconda(или Anaconda)** https://www.anaconda.com/download
+7. **Создайте и активируйте виртуальное окружение:**
+   ```
    conda create -n llm_env python=3.8
    conda activate llm_env
+   ```
 
 ## Использование
-1. Извлечение текста из PDF:
-    ```bash
+1. **Извлечение текста из PDF:**
+    ```
     python scripts/extract_text.py
-2. Разделение текста на фрагменты:
+    ```
+2. **Разделение текста на фрагменты:**
     ```bash
     python scripts/split_text.py
-3. Создание датасета:
-    ```bash
+3. **Создание датасета:**
+    ```
     python scripts/create_dataset.py
-4. Обучение модели:
-    ```bash
+    ```
+4. **Обучение модели:**
+    ```
     python scripts/train_model.py
-5. Начало общения с моделью:
-    ```bash
-    python scripts/chat_interface.py
+    ```
+5. **Начало общения с моделью:**
+    ```
+    python scripts/chat_interface.py 
+    ```
 
 ---
 ---
@@ -74,12 +86,10 @@ Training and using a language model based on lecture PDF files.
 2. **Install PyTorch with CUDA support:**  
    Replace `cu113` with your CUDA version (e.g., `cu116` for CUDA 11.6).
    ```bash
-   # Copy the following command
    pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
    ```
    If you are using a CPU:
    ```bash
-   # Copy the following command
    pip install torch torchvision torchaudio
    ```
 
@@ -92,7 +102,7 @@ Training and using a language model based on lecture PDF files.
    pip install faiss-gpu
    ```
 
-4. **Install Miniconda (or Anaconda)**
+4. **Install Miniconda (or Anaconda)** https://www.anaconda.com/download
 
 5. **Create and activate a virtual environment:**
    ```bash
